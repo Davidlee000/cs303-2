@@ -1,6 +1,7 @@
+#pragma once
 #ifndef singleLL
 #define singleLL
-#include <iostream>;
+
 using namespace std;
 
 
@@ -18,9 +19,10 @@ class LL {
 private:
     Node* head;
     Node* tail;
-    size_t num_items;
+    
 
 public:
+    size_t num_items;
     //constructor
     LL() {
         head = nullptr;
@@ -151,6 +153,11 @@ public:
            counter++;
        }
        return num_items;
+   }
+   void dispaly() {
+       for (size_t i = 0; i < num_items; i++) {
+
+       }
    }
 };
 

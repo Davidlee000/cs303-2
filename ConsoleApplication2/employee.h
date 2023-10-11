@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include<iostream>
 using namespace std;
@@ -6,8 +7,8 @@ class Employee {
 
 //shared attributes
 protected:
-	string name;
-	double hourlypay;
+	string name="";
+	double hourlypay=0.0;
 
 public:
 	Employee(string n, double pay) :name(n), hourlypay(pay) {}
@@ -17,11 +18,11 @@ public:
 
 };
 
-class professional : public Employee {
+class professional : protected Employee {
 private:
-	int total_vacation;
+	int total_vacation=0;
 public:
-	professional(string n, double pay, int total_v) :Employee(n, pay), total_vacation(total_v) {}
+	professional(string n, double pay, int total_v=0) :Employee(n, pay), total_vacation(total_v) {};
 
 	//weekly salary  40hr work week
 	double weekly_salary()override {
@@ -39,11 +40,11 @@ public:
 
 };
 
-class nonprofessional : public Employee {
+class nonprofessional : protected Employee {
 private:
-	int hours_worked;
+	int hours_worked=0;
 public:
-	nonprofessional(string n, double pay, int hours) :Employee(n, pay), hours_worked(hours) {}
+	nonprofessional(string n, double pay, int hours) :Employee(n, pay), hours_worked(hours) {};
 	//weekly salary based on hours worked
 	double weekly_salary()override {
 		return hourlypay * hours_worked;
@@ -54,7 +55,7 @@ public:
 	}
 	//vacation days reflect hours worked
 	double vacation_days()override {
-		return hours_worked / 100;
+		return hours_worked / static_cast<double>(100);
 	}
 
 };
