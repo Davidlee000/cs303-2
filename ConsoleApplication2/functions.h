@@ -79,6 +79,37 @@ void linkedlist(LL l) {
     };
 };
 		
-	void Employees(vector<Employee>&a){
-		
-	};
+void Employees(vector<professional> a,vector<nonprofessional> b) {
+    int i,pay,vacation,hours;
+    string name;
+
+    cout << "Test Employee Class\n";
+    while (true) {
+        cout << "1. Add a professional Employee\n";
+        cout << "2. Add a nonprofessional Employee\n";
+        cout << "3. View Employee Information\n";
+        cout << "4. Removew an Employee\n";
+        cout << "5. quit\n";
+        cin >> i;
+        switch (i) {
+        case 1:
+            cout << "Enter Employee Name";
+            cin >> name;
+            cout << "Enter Employee hourly pay";
+            cin >> pay;
+            cout << "Enter Employee vacation time";
+            cin >> vacation;
+            a.push_back( professional(name, pay, vacation));
+            break;
+        case 2:
+            cout << "Enter Employee Name";
+            cin >> name;
+            cout << "Enter Employee hourly pay";
+            cin >> pay;
+            cout << "Enter Employee hours worked";
+            cin >> hours;
+            b.push_back(nonprofessional(name, pay, hours));
+            break;
+        }
+    }
+};

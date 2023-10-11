@@ -10,7 +10,8 @@ using namespace std;
 
 int main(){
 	LL list;
-	vector<Employee> v;
+	vector<professional> p;
+	vector<nonprofessional> n;
 
 	void menu(); {
 		int c;
@@ -24,7 +25,7 @@ int main(){
 					linkedlist(list);
 				break;
 				case 2:
-					Employees(v);
+					Employees(p,n);
 				break;
 				case 'q':
 				break;
