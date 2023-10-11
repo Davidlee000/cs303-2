@@ -62,9 +62,13 @@ void linkedlist(LL l) {
             break;
         case 9:
             cout << "enter index";
+            cin >> index;
+            l.remove(index);
             break;
         case 10:
-            std::cout << "You entered 10.\n";
+            cout << "enter item to find";
+            cin >> x;
+            cout <<"your number is found at " << l.find(x);
             break;
         default:
             std::cout << "invalid input.\n";
