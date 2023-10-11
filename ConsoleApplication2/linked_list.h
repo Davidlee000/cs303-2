@@ -154,10 +154,13 @@ public:
        }
        return num_items;
    }
-   void dispaly() {
+   void display() {
+       Node* temp = head;
        for (size_t i = 0; i < num_items; i++) {
-
+           cout << temp->data <<", ";
+           temp = temp->next;
        }
+       cout << "\n";
    }
 };
 

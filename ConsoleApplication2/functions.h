@@ -6,49 +6,62 @@ using namespace std;
 #include<string>
 
 void linkedlist(LL l) {
-	int c;
-    int x;
-	cout << "Test the functionality of single linked list";
-	cout << "1. push_front";
-	cout << "2. push_back";
-	cout << "3. pop_front";
-	cout << "4. pop_back";
-	cout << "5. front";
-	cout << "6. back";
-	cout << "7. empty";
-	cout << "8. insert at index";
-	cout << "9. remove at index";
-	cout << "10. find item";
-	cin >> c;
-	switch (c) {
+    while (true) {
+        int c;
+        int x;
+        size_t index;
+        cout << "Test the functionality of single linked list\n";
+        cout << "1. push_front\n";
+        cout << "2. push_back\n";
+        cout << "3. pop_front\n";
+        cout << "4. pop_back\n";
+        cout << "5. front\n";
+        cout << "6. back\n";
+        cout << "7. empty\n";
+        cout << "8. insert at index\n";
+        cout << "9. remove at index\n";
+        cout << "10. find item\n";
+        cin >> c;
+        switch (c) {
         case 1:
-            cout << "enter integer";
+            cout << "enter an integer\n";
             cin >> x;
             l.push_front(x);
             break;
         case 2:
-            std::cout << "You entered 2.\n";
+            cout << "enter an integer\n";
+            cin >> x;
+            l.push_back(x);
             break;
         case 3:
-            std::cout << "You entered 3.\n";
+            l.pop_front();
             break;
         case 4:
-            std::cout << "You entered 4.\n";
+            l.pop_back();
             break;
         case 5:
-            std::cout << "You entered 5.\n";
+            cout<<l.front()<<"is at the front of the list";
             break;
         case 6:
-            std::cout << "You entered 6.\n";
+            cout << l.back() << "is at the back of the list";
             break;
         case 7:
-            std::cout << "You entered 7.\n";
+            if (true) {
+                cout << "list is empty";
+            }
+            else{
+                cout << "list is not empty";
+            }
             break;
         case 8:
-            std::cout << "You entered 8.\n";
+            cout << "enter index";
+            cin >> index;
+            cout << "enter value";
+            cin >> x;
+            l.insert(index, x);
             break;
         case 9:
-            std::cout << "You entered 9.\n";
+            cout << "enter index";
             break;
         case 10:
             std::cout << "You entered 10.\n";
@@ -57,8 +70,9 @@ void linkedlist(LL l) {
             std::cout << "invalid input.\n";
 
         }
-    cout << "printing linked list";
-   
+        cout << "printing linked list\n";
+        l.display();
+    };
 };
 		
 	void Employees(vector<Employee>&a){
