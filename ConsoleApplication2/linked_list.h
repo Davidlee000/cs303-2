@@ -19,10 +19,10 @@ class LL {
 private:
     Node* head;
     Node* tail;
-    
+    size_t num_items;
 
 public:
-    size_t num_items;
+    
     //constructor
     LL() {
         head = nullptr;
@@ -91,7 +91,6 @@ public:
            delete tail;
            tail = secondlast;
            tail->next = nullptr;
-
        }
    }
    
@@ -121,7 +120,9 @@ public:
                Node* newnode = new Node(item);
                newnode->next = temp->next;
                temp->next = newnode;
+               num_items++;
            }
+
 
        }
     }

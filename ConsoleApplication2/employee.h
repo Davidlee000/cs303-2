@@ -15,6 +15,7 @@ public:
 	virtual double weekly_salary()=0;
 	virtual double healtcare_contributions() = 0;
 	virtual double vacation_days() = 0;
+	
 
 };
 
@@ -36,7 +37,9 @@ public:
 	double vacation_days()override {
 		return total_vacation;
 	}
-	
+	string getname() {
+		return name;
+	}
 
 };
 
@@ -57,5 +60,7 @@ public:
 	double vacation_days()override {
 		return hours_worked / static_cast<double>(100);
 	}
-
+	string getname() {
+		return name;
+	}
 };

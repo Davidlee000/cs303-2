@@ -40,10 +40,10 @@ void linkedlist(LL l) {
             l.pop_back();
             break;
         case 5:
-            cout<<l.front()<<"is at the front of the list";
+            cout<<l.front()<<" is at the front of the list\n";
             break;
         case 6:
-            cout << l.back() << "is at the back of the list";
+            cout << l.back() << " is at the back of the list\n";
             break;
         case 7:
             if (true) {
@@ -79,7 +79,7 @@ void linkedlist(LL l) {
     };
 };
 		
-void Employees(vector<professional> a,vector<nonprofessional> b) {
+int Employees(vector<professional> a,vector<nonprofessional> b) {
     int i,pay,vacation,hours;
     string name;
 
@@ -87,9 +87,7 @@ void Employees(vector<professional> a,vector<nonprofessional> b) {
     while (true) {
         cout << "1. Add a professional Employee\n";
         cout << "2. Add a nonprofessional Employee\n";
-        cout << "3. View Employee Information\n";
-        cout << "4. Removew an Employee\n";
-        cout << "5. quit\n";
+        cout << "3. quit\n";
         cin >> i;
         switch (i) {
         case 1:
@@ -97,7 +95,7 @@ void Employees(vector<professional> a,vector<nonprofessional> b) {
             cin >> name;
             cout << "Enter Employee hourly pay";
             cin >> pay;
-            cout << "Enter Employee vacation time";
+            cout << "Enter Employee vacation days";
             cin >> vacation;
             a.push_back( professional(name, pay, vacation));
             break;
@@ -110,6 +108,25 @@ void Employees(vector<professional> a,vector<nonprofessional> b) {
             cin >> hours;
             b.push_back(nonprofessional(name, pay, hours));
             break;
+        case 3:
+            return 0;
         }
+        cout << "\n";
+        cout << "Displaying Employee information\n";
+        for (int i = 0; i < a.size(); i++) {
+            cout << "Employee Name: "<<a.at(i).getname()<<"\n";
+            cout << "Employee Weekly pay $"<<a.at(i).weekly_salary()<<"\n";
+            cout << "Employee Weekly healthcare contributions $"<<a.at(i).healtcare_contributions()<<"\n";
+            cout << "Emplyee vacation days: " << a.at(i).vacation_days()<<"\n";
+            cout << "\n";
+        }
+        for (int i = 0; i < b.size(); i++) {
+            cout << "Employee Name: " << b.at(i).getname() << "\n";
+            cout << "Employee Weekly pay: $" << b.at(i).weekly_salary() << "\n";
+            cout << "Employee Weekly healthcare contributions $" << b.at(i).healtcare_contributions() << "\n";
+            cout << "Employee earned " << b.at(i).vacation_days() << "vacation days\n";
+            cout << "\n";
+        }
+        
     }
 };

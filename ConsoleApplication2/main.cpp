@@ -25,7 +25,8 @@ int main(){
 					linkedlist(list);
 				break;
 				case 2:
-					Employees(p,n);
+					if (Employees(p, n) == 1) {
+					};
 				break;
 				case 'q':
 				break;
